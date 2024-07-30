@@ -1,0 +1,33 @@
+<!-- Utiliser {{ }} pour faire référence aux variables ou méthodes publiques du composant-->
+<p>valeur du input = {{ value() }}</p>
+
+<!-- L'opérateur | permet d'utiliser des pipes (fonctions) pour l'affichage. Demande d'importer le UpperCasePipe et DatePipe -->
+<p>valeur du input (en majuscule) = {{ value() | uppercase }}</p>
+
+<p>Date = {{ currentTimestamp() | date }}</p>
+
+<!-- Utiliser [(ngModel)] pour définir un two-way binding. Demande d'importer le FormsModule-->
+<input name="variable" [(ngModel)]="value" (ngModelChange)="onValueChange()" />
+
+<!-- Utiliser (...) pour associer une fonction qui sera déclanchée par un événement particulier. -->
+<!-- $event capture l'événement -->
+<button (click)="clear()">x</button>
+
+<!-- *ngIf pour un affichage conditionnel -->
+@if (value().includes("a")) {
+  <p>Contient un 'a'</p>
+} @else {
+  <p>Ne contient pas de 'a'</p>
+}
+
+<div>
+  <!-- *ngFor pour itérer -->
+  @for (c of toChar(value()); track $index; let last = $last) {
+    <span>
+      <span>{{ c }}</span>
+      @if (!last) {
+        <span>, </span>
+      }
+    </span>
+  }
+</div>

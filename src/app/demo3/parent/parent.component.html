@@ -1,0 +1,10 @@
+<button (click)="onClick()">Clique moi!</button>
+
+<!-- On réutilise la référence définie plus bas pour accéder au attributs et méthodes publiques. -->
+<p>Texte de l'enfant (via template): {{ childInTemplate.text }}</p>
+
+<!-- # permet de nommer l'élément et de réutiliser sa référence ailleurs dans le HTML -->
+<app-child #childInTemplate>
+  <!-- Possibilite d'injecter du contenu à l'enfant -->
+  <p>Contenu venant du parent.</p>
+</app-child>
