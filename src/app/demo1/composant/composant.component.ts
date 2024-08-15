@@ -1,4 +1,4 @@
-import { Component, model, OnDestroy, OnInit, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DatePipe, UpperCasePipe } from '@angular/common';
 import { LocalStorageService } from '../local-storage.service';
 import { FormsModule } from '@angular/forms';
@@ -6,24 +6,28 @@ import { FormsModule } from '@angular/forms';
 /**
  * Identifie le composant et pointe vers les fichiers qui lui sont liés.
  *
- * Le 'selector' est le nom de l'élément a utiliser dans un fichier HTML
- * pour inclure ce composant.
+ * Le 'selector' est le nom de l'élément à utiliser dans un fichier HTML
+ * pour inclure ce composant (ex: <app-composant></app-composant>).
  */
 @Component({
   standalone: true, // Un composant standalone n'appartient pas a un module, nouveau défault dans Angular
   selector: 'app-composant',
   templateUrl: './composant.component.html',
   styleUrls: ['./composant.component.css'],
-  imports: [DatePipe, UpperCasePipe, FormsModule], // Import des pipes pour les utiliser dans le template
+  imports: [DatePipe, UpperCasePipe, FormsModule], // Import des pipes, composants et modules pour les rendre accessibles
 })
 export class ComposantComponent implements OnInit, OnDestroy {
   private static STORAGE_KEY = 'last_value_key';
   private static DEFAULT_VALUE = 'inf5190';
 
-  // Les variables publiques sont accessibles dans le template
-  value = model('');
-  currentTimestamp = signal(Date.now());
+  // Les variables et fonctions publiques sont accessibles dans le template HTML
 
+  // Une variable simple. Elle peut être utilisée dans le template HTML en utilisant {{ currentTimestamp }}
+  currentTimestamp = Date.now();
+
+  value = '';
+
+  // Constructeur du composant. Les services sont injectés ici par Angular à la création du composant.
   constructor(private localStorageService: LocalStorageService) {
     console.log('construction');
   }
@@ -32,7 +36,7 @@ export class ComposantComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     console.log('init');
     const stored = this.localStorageService.get(ComposantComponent.STORAGE_KEY);
-    this.value.set(stored !== null ? stored : ComposantComponent.DEFAULT_VALUE);
+    this.value = stored !== null ? stored : ComposantComponent.DEFAULT_VALUE;
   }
 
   // Accroche lors de la destruction du composant
@@ -47,7 +51,7 @@ export class ComposantComponent implements OnInit, OnDestroy {
 
   // Sur un delete, on efface la variable et stock dans LocalStorage
   clear() {
-    this.value.set('');
+    this.value = '';
     this.saveInLocalStorage();
   }
 
@@ -58,6 +62,6 @@ export class ComposantComponent implements OnInit, OnDestroy {
 
   // Méthode privée pour centraliser la sauvegarde dans le LocalStorage
   private saveInLocalStorage() {
-    this.localStorageService.set(ComposantComponent.STORAGE_KEY, this.value());
+    this.localStorageService.set(ComposantComponent.STORAGE_KEY, this.value);
   }
 }

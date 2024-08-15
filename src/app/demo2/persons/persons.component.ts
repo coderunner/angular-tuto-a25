@@ -1,4 +1,4 @@
-import { Component, OnDestroy, signal } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -17,7 +17,7 @@ export class PersonsComponent implements OnDestroy {
   // On assigne le formulaire et ses champs dans le HTML
   form: FormGroup;
 
-  persons = signal<Person[]>([]);
+  persons: Person[] = [];
 
   private personsSubscription: Subscription;
 
@@ -31,7 +31,7 @@ export class PersonsComponent implements OnDestroy {
     });
     this.personsSubscription = this.personService
       .getPersons()
-      .subscribe((persons) => this.persons.set(persons));
+      .subscribe((persons) => (this.persons = persons));
   }
 
   ngOnDestroy(): void {
@@ -49,7 +49,7 @@ export class PersonsComponent implements OnDestroy {
     }
   }
 
-  delete(id: number) {
+  onDelete(id: number) {
     this.personService.delete(id);
   }
 }

@@ -1,20 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { AsyncService } from '../async.service';
+import { Component, inject } from "@angular/core";
+import { AsyncService } from "../async.service";
 
 @Component({
-  selector: 'app-async',
+  selector: "app-async",
   standalone: true,
   imports: [],
-  templateUrl: './async.component.html',
-  styleUrl: './async.component.css',
+  templateUrl: "./async.component.html",
+  styleUrl: "./async.component.css",
 })
 export class AsyncComponent {
-  salutation = signal('...');
+  salutation = "...";
 
-  constructor(private asyncService: AsyncService) {}
+  asyncService: AsyncService = inject(AsyncService);
 
   async onClick() {
     const n = await this.asyncService.getName();
-    this.salutation.set(`Salut ${n}`);
+    this.salutation = `Salut ${n}`;
   }
 }

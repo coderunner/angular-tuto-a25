@@ -9,10 +9,12 @@ import { ChildComponent } from '../child/child.component';
   styleUrl: './parent.component.css',
 })
 export class ParentComponent {
+  compteur = 0;
+
   @ViewChild(ChildComponent)
   child: ChildComponent | undefined;
 
   onClick() {
-    this.child?.setText(Math.random().toString());
+    this.child?.setText(`Texte du parent ${this.compteur++}`);
   }
 }

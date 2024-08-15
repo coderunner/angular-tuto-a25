@@ -1,0 +1,29 @@
+<div>
+  <ul>
+    @for (p of persons(); track p.id) {
+      <li>
+        <!-- On inclue ici le composant Person en spécifiant les inputs (id, name) et output (onDelete) -->
+        <app-signal-child
+          [person]="p"
+          (delete)="onDelete(p.id)"
+        ></app-signal-child>
+      </li>
+    }
+  </ul>
+</div>
+<div>
+  <!-- On definit que le FormGroup associé à ce formulaire est 'form'.
+           On déclare la fonction à appeler lorsqu'on soumet le formulaire.
+           Demande l'import du ReactiveFormModule -->
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- On associe l'élément 'input' avec le champ 'name' du formulaire -->
+    <input name="name" formControlName="name" />
+    <button type="submit">Ajouter</button>
+  </form>
+</div>
+
+<p>Nombre de personnes ajoutées dans cette session: {{ newPersonCount() }}</p>
+<p>
+  Nombre de personnes supprimées dans cette session: {{ deletedPersonCount() }}
+</p>
+<p>Delta: {{ diffPersonCount() }}</p>

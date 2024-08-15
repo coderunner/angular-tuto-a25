@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label
+    >Nom
+    <input type="text" formControlName="name" />
+  </label>
+  <label
+    >Courriel
+    <input type="email" formControlName="email" />
+  </label>
+
+  <button type="submit">Soumettre</button>
+</form>
+
+@if (showInvalidFormMessage) {
+  <p>Le formulaire est invalide</p>
+}
+@if (submittedValue) {
+  <p>Valeurs soumises</p>
+  <p>Nom: {{ submittedValue.name }}</p>
+  <p>Courriel: {{ submittedValue.email }}</p>
+}

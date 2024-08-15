@@ -1,9 +1,9 @@
 <div>
   <ul>
-    @for (p of persons(); track p.id) {
+    @for (p of persons; track p.id) {
       <li>
         <!-- On inclue ici le composant Person en spécifiant les inputs (id, name) et output (onDelete) -->
-        <app-person [person]="p" (onDelete)="delete(p.id)"></app-person>
+        <app-person [person]="p" (delete)="onDelete(p.id)"></app-person>
       </li>
     }
   </ul>
