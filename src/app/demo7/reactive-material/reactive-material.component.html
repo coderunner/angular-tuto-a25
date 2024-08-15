@@ -1,0 +1,27 @@
+<div>
+  <div class="toolbar">
+    <h3 class="toolbar-title">Catalogue</h3>
+    <mat-form-field class="toolbar-filter">
+      <mat-label>Filtre produit</mat-label>
+      <input matInput placeholder="Placeholder" [formControl]="filterControl" />
+      <mat-hint>Entrer le nom du produit</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="catalog">
+    @for (p of filteredProducts(); track $index) {
+      <mat-card class="catalog-card">
+        <mat-card-header>
+          <mat-card-title>{{ p.title }}</mat-card-title>
+        </mat-card-header>
+        <img alt="catalog-image" mat-card-image src="{{ p.img }}" />
+        <mat-card-content>
+          <p>{{ p.content }}</p>
+        </mat-card-content>
+        <mat-card-actions class="catalog-card-action">
+          <button mat-button>J'aime</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</div>

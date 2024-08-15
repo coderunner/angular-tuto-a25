@@ -5,6 +5,8 @@ import { ParentComponent } from './demo3/parent/parent.component';
 import { AsyncComponent } from './demo4/async/async.component';
 import { FormComponent } from './demo5/form/form.component';
 import { SignalComponent } from './demo6/signal/signal.component';
+import { ReactiveMaterialComponent } from './demo7/reactive-material/reactive-material.component';
+import { ChangeDetectionComponent } from './demo8/change-detection/change-detection.component';
 
 export const routes: Routes = [
   {
@@ -30,6 +32,14 @@ export const routes: Routes = [
   {
     path: 'demo6',
     component: SignalComponent,
+  },
+  {
+    path: 'demo7',
+    component: ReactiveMaterialComponent,
+  },
+  {
+    path: 'demo8',
+    component: ChangeDetectionComponent,
   },
   {
     path: '**',

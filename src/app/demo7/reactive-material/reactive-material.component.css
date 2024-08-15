@@ -1,0 +1,66 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em 1em 2em;
+}
+
+.toolbar-title {
+  flex: 1;
+}
+
+.toolbar-filter {
+  flex: 2;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 2em;
+}
+
+.catalog-card {
+  background-color: beige;
+  width: 14em;
+}
+
+.catalog-card-action {
+  align-self: end;
+}
+
+img {
+  height: 14em;
+  width: 14em;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: aliceblue;
+  }
+
+  .toolbar-title {
+    display: none;
+  }
+
+  .catalog-card {
+    width: 18em;
+  }
+
+  img {
+    height: 12em;
+    width: 12em;
+    object-fit: cover;
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

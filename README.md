@@ -1,4 +1,4 @@
-# Demo Angular
+# Demo Angular (Angular v18)
 
 Voir la documentation sur Angular: https://angular.dev/
 
@@ -103,3 +103,23 @@ Comment naviguer sur les différentes pages.
 - RouterOutlet - element qui affiche le composant indiqué par la route active
 - routerLink - déclancher la navigation
 - intercepteur HTTP
+
+## Démo 7
+
+Design reactif et Material
+
+À voir:
+
+- directives flex
+- @media query
+- éléments Material dans le template HTML
+
+## Démo 8
+
+Détection de changement.
+
+À voir:
+
+- évaluation des templates (console)
+- OnPush
+- signals
