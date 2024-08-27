@@ -1,7 +1,6 @@
-@let p = person;
-@if (p) {
+@if (person) {
   <div>
-    <span>{{ p.id }}: {{ p.name }}</span>
+    <span>{{ person.id }}: {{ person.name }}</span>
     <button (click)="onDelete()">x</button>
   </div>
 }
