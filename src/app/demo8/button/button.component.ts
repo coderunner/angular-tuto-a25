@@ -1,12 +1,10 @@
 import { Component, input, output, signal } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
-  standalone: true,
-  imports: [],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.css',
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-button',
+    imports: [],
+    templateUrl: './button.component.html',
+    styleUrl: './button.component.css'
 })
 export class ButtonComponent {
   name = input<string>();

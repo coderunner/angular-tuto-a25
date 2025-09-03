@@ -6,11 +6,10 @@ import { Subscription } from 'rxjs';
 import { PersonComponent } from '../person/person.component';
 
 @Component({
-  selector: 'app-persons',
-  standalone: true,
-  imports: [PersonComponent, ReactiveFormsModule],
-  templateUrl: './persons.component.html',
-  styleUrl: './persons.component.css',
+    selector: 'app-persons',
+    imports: [PersonComponent, ReactiveFormsModule],
+    templateUrl: './persons.component.html',
+    styleUrl: './persons.component.css'
 })
 export class PersonsComponent implements OnDestroy {
   // On crée la structure du formulaire.

@@ -10,11 +10,10 @@ import { FormsModule } from '@angular/forms';
  * pour inclure ce composant (ex: <app-composant></app-composant>).
  */
 @Component({
-  standalone: true, // Un composant standalone n'appartient pas a un module, nouveau défault dans Angular
-  selector: 'app-composant',
-  templateUrl: './composant.component.html',
-  styleUrls: ['./composant.component.css'],
-  imports: [DatePipe, UpperCasePipe, FormsModule], // Import des pipes, composants et modules pour les rendre accessibles
+    selector: 'app-composant',
+    templateUrl: './composant.component.html',
+    styleUrls: ['./composant.component.css'],
+    imports: [DatePipe, UpperCasePipe, FormsModule]
 })
 export class ComposantComponent implements OnInit, OnDestroy {
   private static STORAGE_KEY = 'last_value_key';

@@ -3,12 +3,11 @@ import { Component } from '@angular/core';
 import { Person } from '../../demo2/person.model';
 
 @Component({
-  selector: 'app-signal-child',
-  standalone: true,
-  imports: [],
-  templateUrl: './signal-child.component.html',
-  styleUrl: './signal-child.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-signal-child',
+    imports: [],
+    templateUrl: './signal-child.component.html',
+    styleUrl: './signal-child.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalChildComponent {
   // Alternative au @Input qui crée un signal

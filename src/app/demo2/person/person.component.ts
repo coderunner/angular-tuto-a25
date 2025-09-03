@@ -2,11 +2,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Person } from '../person.model';
 
 @Component({
-  selector: 'app-person',
-  standalone: true,
-  imports: [],
-  templateUrl: './person.component.html',
-  styleUrl: './person.component.css',
+    selector: 'app-person',
+    imports: [],
+    templateUrl: './person.component.html',
+    styleUrl: './person.component.css'
 })
 export class PersonComponent {
   // Input() permet au composant de prendre des paramètres lors de la création

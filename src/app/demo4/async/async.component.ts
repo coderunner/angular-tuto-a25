@@ -2,11 +2,10 @@ import { Component, inject } from "@angular/core";
 import { AsyncService } from "../async.service";
 
 @Component({
-  selector: "app-async",
-  standalone: true,
-  imports: [],
-  templateUrl: "./async.component.html",
-  styleUrl: "./async.component.css",
+    selector: "app-async",
+    imports: [],
+    templateUrl: "./async.component.html",
+    styleUrl: "./async.component.css"
 })
 export class AsyncComponent {
   salutation = "...";

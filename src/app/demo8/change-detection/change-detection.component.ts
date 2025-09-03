@@ -2,12 +2,10 @@ import { Component, signal } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-change-detection',
-  standalone: true,
-  imports: [ButtonComponent],
-  templateUrl: './change-detection.component.html',
-  styleUrl: './change-detection.component.css',
-  //changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-change-detection',
+    imports: [ButtonComponent],
+    templateUrl: './change-detection.component.html',
+    styleUrl: './change-detection.component.css'
 })
 export class ChangeDetectionComponent {
   total = signal(0);

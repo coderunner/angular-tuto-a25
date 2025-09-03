@@ -5,16 +5,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
-  selector: 'app-reactive-material',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
-  templateUrl: './reactive-material.component.html',
-  styleUrl: './reactive-material.component.css',
+    selector: 'app-reactive-material',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+    ],
+    templateUrl: './reactive-material.component.html',
+    styleUrl: './reactive-material.component.css'
 })
 export class ReactiveMaterialComponent {
   data = [
