@@ -13,11 +13,11 @@ import { Subscription } from 'rxjs';
 import { SignalChildComponent } from '../signal-child/signal-child.component';
 
 @Component({
-    selector: 'app-signal',
-    imports: [ReactiveFormsModule, SignalChildComponent],
-    templateUrl: './signal.component.html',
-    styleUrl: './signal.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-signal',
+  imports: [ReactiveFormsModule, SignalChildComponent],
+  templateUrl: './signal.component.html',
+  styleUrl: './signal.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignalComponent implements OnDestroy {
   form: FormGroup;

@@ -7,10 +7,10 @@ import {
 } from '@angular/forms';
 
 @Component({
-    selector: 'app-form',
-    imports: [ReactiveFormsModule],
-    templateUrl: './form.component.html',
-    styleUrl: './form.component.css'
+  selector: 'app-form',
+  imports: [ReactiveFormsModule],
+  templateUrl: './form.component.html',
+  styleUrl: './form.component.css',
 })
 export class FormComponent {
   // Création de la structure du formulaire

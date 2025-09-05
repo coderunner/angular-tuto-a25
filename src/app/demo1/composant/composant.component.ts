@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
  *
  * Le 'selector' est le nom de l'élément à utiliser dans un fichier HTML
  * pour inclure ce composant (ex: <app-composant></app-composant>).
+ *
+ * Ne pas oublier d'ajouter des dépendances dans la section imports.
  */
 @Component({
-    selector: 'app-composant',
-    templateUrl: './composant.component.html',
-    styleUrls: ['./composant.component.css'],
-    imports: [DatePipe, UpperCasePipe, FormsModule]
+  selector: 'app-composant',
+  templateUrl: './composant.component.html',
+  styleUrls: ['./composant.component.css'],
+  imports: [DatePipe, UpperCasePipe, FormsModule],
 })
 export class ComposantComponent implements OnInit, OnDestroy {
   private static STORAGE_KEY = 'last_value_key';
